@@ -38,12 +38,16 @@ public class Board {
 		}
 	}
 
-	public void print() {
+	private void print(boolean printIndex) {
 		for(int row = 0; row < ROWS; row++) {
 			for(int col = 0; col < COLS; col++) {
 				// display content
-				//System.out.println((board[row][col]).getIndex());
-				(board[row][col]).print();
+				if(printIndex) {
+					(board[row][col]).printIndex();
+				}
+				else {
+					(board[row][col]).print();
+				}
                 // display vertical divider
 				if(col < COLS - 1) { System.out.print("|"); }
 
@@ -53,6 +57,14 @@ public class Board {
 			// display horizontal divider 
 			if(row < ROWS - 1) { System.out.println("-----------"); }
 		}
+	}
+
+	public void print() {
+		print(false);
+	}
+
+	public void printIndex() {
+		print(true);
 	}
 }
 

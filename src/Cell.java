@@ -26,6 +26,10 @@ public class Cell {
 		}
 	}
 
+	public void printIndex() {
+		System.out.print(" " + getIndex() + " ");
+	}
+
 	public int getIndex() {
 		return this.row * Board.COLS + this.col + 1;
 	}

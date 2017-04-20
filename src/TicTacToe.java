@@ -23,13 +23,16 @@
 import java.util.Scanner;
 
 public class TicTacToe {
-	public TicTacToe() {
-		Board board = new Board();
-		board.print();
-	}
 
 	public static void main(String[] args) {
-		new TicTacToe();
+		Board board = new Board();
+
+		System.out.println("Let's play Tic-Tac-Toe!\n");
+
+		System.out.println("Here is the layout of the board:");
+		board.printIndex();
+
+
 	}
 
 
