@@ -1,12 +1,6 @@
-public enum CellType {
-	EMPTY, 
-	X, 
-	O
-}
-
 public class Cell {
-	CellType content;
-	int row, col;
+	private CellType content;
+	private int row, col;
 
 	public Cell(int row, int col) {
 		this.row = row;
@@ -15,21 +9,25 @@ public class Cell {
 	}
 
 	public void clear() {
-		content = CellType.EMPTY;
+		this.content = CellType.EMPTY;
 	}
 
-	public void display() {
-		switch(content) {
-			case CellType.EMPTY: 
-				System.out.print(" "); 
+	public void print() {
+		switch(this.content) {
+			case EMPTY: 
+				System.out.print("   "); 
 				break;
-			case CellType.X:
-				System.out.print("X");
+			case HUMAN:
+				System.out.print(" X ");
 				break;
-			case CellType.O:
-				System.out.print("O");
+			case COMPUTER:
+				System.out.print(" O ");
 				break;
 		}
+	}
+
+	public int getIndex() {
+		return this.row * Board.COLS + this.col + 1;
 	}
 
 }
